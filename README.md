@@ -1,4 +1,4 @@
-# v3
+# Charla Vue Composition API Vuejs México - Vue 3
 
 ## Project setup
 ```
