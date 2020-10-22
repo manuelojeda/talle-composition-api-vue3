@@ -1,15 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <button @click="clickMe">
+    Click me
+  </button>
+  {{ characters }}
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Characters from './class/Characters'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  setup () {
+    const service = new Characters()
+    const characters = service.getCharacters()
+
+    async function clickMe () {
+      await service.fetch()
+    }
+
+    return {
+      characters,
+      clickMe
+    }
   }
 }
 </script>
